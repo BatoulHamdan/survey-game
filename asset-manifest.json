@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/survey-game/static/css/main.c761596d.css",
-    "main.js": "/survey-game/static/js/main.44e68117.js",
+    "main.js": "/survey-game/static/js/main.884ea8df.js",
     "static/js/16.97c4ea42.chunk.js": "/survey-game/static/js/16.97c4ea42.chunk.js",
     "static/js/378.a88d29c9.chunk.js": "/survey-game/static/js/378.a88d29c9.chunk.js",
     "static/js/487.423f7be0.chunk.js": "/survey-game/static/js/487.423f7be0.chunk.js",
@@ -37,7 +37,7 @@
     "static/media/happy-earth.png": "/survey-game/static/media/happy-earth.0333ab88ed6fa2d446da.png",
     "index.html": "/survey-game/index.html",
     "main.c761596d.css.map": "/survey-game/static/css/main.c761596d.css.map",
-    "main.44e68117.js.map": "/survey-game/static/js/main.44e68117.js.map",
+    "main.884ea8df.js.map": "/survey-game/static/js/main.884ea8df.js.map",
     "16.97c4ea42.chunk.js.map": "/survey-game/static/js/16.97c4ea42.chunk.js.map",
     "378.a88d29c9.chunk.js.map": "/survey-game/static/js/378.a88d29c9.chunk.js.map",
     "487.423f7be0.chunk.js.map": "/survey-game/static/js/487.423f7be0.chunk.js.map",
@@ -71,6 +71,6 @@
   },
   "entrypoints": [
     "static/css/main.c761596d.css",
-    "static/js/main.44e68117.js"
+    "static/js/main.884ea8df.js"
   ]
 }
