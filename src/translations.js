@@ -1,0 +1,147 @@
+const translations = {
+    title: {
+      Arabic: "استبيان الاحتباس الحراري",
+      default: "Global Warming Survey",
+      Italian: "Sondaggio sul Riscaldamento Globale",
+      Farsi: "نظر سنجی گرمایش جهانی",
+      French: "Sondage sur le réchauffement climatique",
+    },
+    selectLanguage: {
+      Arabic: "🌍 اختر لغتك",
+      default: "🌍 Select Your Language",
+      Italian: "🌍 Seleziona la tua lingua",
+      Farsi: "🌍 زبان خود را انتخاب کنید",
+      French: "🌍 Sélectionnez votre langue",
+    },
+    welcomeMessage: {
+      Arabic: "مرحبًا بك في استبيان Clim8s! نرحب بك في استبياننا ونشكر لك اهتمامك بحماية البيئة.",
+      default: "Welcome to the Clim8s Survey! We are glad you chose to do your part and help the environment.",
+      Italian: "Benvenuto al Sondaggio Clim8s! Siamo felici che tu abbia scelto di fare la tua parte per aiutare l'ambiente.",
+      Farsi: "به نظرسنجی Clim8s خوش آمدید! خوشحالیم که برای کمک به محیط زیست گام برداشته‌اید.",
+      French: "Bienvenue au Sondage Clim8s! Nous sommes heureux que vous ayez choisi de faire votre part pour aider l'environnement.",
+    },
+    surveyIntro: {
+      Arabic: "نحن سعداء لأنك قررت أن تقوم بدورك وتساعد البيئة. سيتم مكافأتك على صبرك في ملء هذا الاستبيان، انتظر حتى النهاية لمفاجأتك! 🎉",
+      default: "We are glad you chose to do your part and help the environment. To reward you for your patience in filling out this survey, wait till the end for your surprise! 🎉",
+      Italian: "Siamo felici che tu abbia scelto di fare la tua parte e aiutare l'ambiente. Per premiarti per la tua pazienza nel compilare questo sondaggio, aspetta fino alla fine per la tua sorpresa! 🎉",
+      Farsi: "خوشحالیم که برای کمک به محیط زیست گام برداشته‌اید. برای پاداش دادن به صبر شما در پر کردن این نظرسنجی، تا پایان منتظر شگفتی خود باشید! 🎉",
+      French: "Nous sommes heureux que vous ayez choisi de faire votre part pour aider l'environnement. Pour vous récompenser de votre patience en remplissant ce sondage, attendez jusqu'à la fin pour votre surprise! 🎉",
+    },
+    startButton: {
+      Arabic: "ابدأ الاستبيان",
+      default: "Start Survey",
+      Italian: "Inizia il sondaggio",
+      Farsi: "شروع نظرسنجی",
+      French: "Démarrer le sondage",
+    },
+    question: {
+      "Arabic": "سؤال",
+      "default": "Question",
+      "Italian": "Domanda",
+      "Farsi": "سوال",
+      "French": "Question"
+    },
+    of: {
+      Arabic: "من",
+      default: "of",
+      Italian: "di",
+      Farsi: "از",
+      French: "sur"
+    },
+    back: {
+      Arabic: "السابق",
+      default: "Back",
+      Italian: "Indietro",
+      Farsi: "قبلی",
+      French: "Retour",
+    },
+    next: {
+      Arabic: "التالي",
+      default: "Next",
+      Italian: "Avanti",
+      Farsi: "بعدی",
+      French: "Suivant",
+    },
+    submit: {
+      Arabic: "إرسال",
+      default: "Submit",
+      Italian: "Invia",
+      Farsi: "ارسال",
+      French: "Soumettre",
+    },
+    thankYou: {
+      Arabic: "✅ شكرًا لإكمال الاستبيان!",
+      default: "✅ Thanks for completing the survey!",
+      Italian: "✅ Grazie per aver completato il sondaggio!",
+      Farsi: "✅ متشکریم که نظرسنجی را تکمیل کردید!",
+      French: "✅ Merci d'avoir complété le sondage !",
+    },
+    finishNote: {
+      Arabic: "نأمل أن تسهم في حماية كوكبنا 🌍",
+      default: "We hope you contribute to saving our planet 🌍",
+      Italian: "Speriamo che tu contribuisca a salvare il nostro pianeta 🌍",
+      Farsi: "امیدواریم که به نجات سیاره‌مان کمک کنید 🌍",
+      French: "Nous espérons que vous contribuerez à sauver notre planète 🌍",
+    },
+    milestones: {
+      "10": {
+        Arabic: "🌟 بداية ممتازة! أنت الآن 10٪ من الطريق!",
+        default: "🌟 Excellent start! You're 10% of the way through!",
+        Italian: "🌟 Ottimo inizio! Sei al 10%!",
+        Farsi: "🌟 شروع عالی! شما ۱۰٪ را تکمیل کردید!",
+        French: "🌟 Très bon début ! Vous avez complété 10 % du chemin !",
+      },
+      "25": {
+        Arabic: "✨ بداية رائعة! لقد أكملت 25٪!",
+        default: "✨ Great start! You're 25% of the way through!",
+        Italian: "✨ Grande inizio! Hai completato il 25%!",
+        Farsi: "✨ شروع عالی! شما ۲۵٪ را تکمیل کردید!",
+        French: "✨ Très bon début ! Vous avez complété 25 % du chemin !",
+      },
+      "30": {
+        Arabic: "🚀 أنت تقريبًا في ثلث الطريق!",
+        default: "🚀 You're almost a third of the way there!",
+        Italian: "🚀 Sei quasi a un terzo del percorso!",
+        Farsi: "🚀 تقریباً یک سوم مسیر را طی کرده‌اید!",
+        French: "🚀 Vous êtes presque à un tiers du chemin !",
+      },
+      "50": {
+        Arabic: "🎉 لقد وصلت إلى منتصف الطريق! استمر!",
+        default: "🎉 You're halfway there! Keep going!",
+        Italian: "🎉 Sei a metà strada! Continua così!",
+        Farsi: "🎉 شما به نیمه راه رسیده‌اید! ادامه دهید!",
+        French: "🎉 Vous êtes à mi-chemin ! Continuez comme ça !",
+      },
+      "60": {
+        Arabic: "🔥 أنت على وشك إتمام المهمة! فقط قليل من الجهد!",
+        default: "🔥 You're almost there! Just a bit more to go!",
+        Italian: "🔥 Sei quasi arrivato! Ancora poco!",
+        Farsi: "🔥 تقریباً تمام شد! فقط کمی بیشتر باقی است!",
+        French: "🔥 Vous êtes presque là ! Plus qu'un peu !",
+      },
+      "75": {
+        Arabic: "🔥 أوشكت على الانتهاء! القليل فقط متبقي!",
+        default: "🔥 Almost done! Just a little more to go!",
+        Italian: "🔥 Quasi finito! Ancora poco!",
+        Farsi: "🔥 تقریباً تمام شد! فقط کمی بیشتر باقی است!",
+        French: "🔥 Presque fini ! Il reste juste un peu à faire !",
+      },
+      "90": {
+        Arabic: "⚡ أنت في اللمسات الأخيرة! فقط بعض الأسئلة المتبقية!",
+        default: "⚡ You're in the final stretch! Just a few questions left!",
+        Italian: "⚡ Sei alla fine! Manca solo qualche domanda!",
+        Farsi: "⚡ شما در مرحله آخر هستید! فقط چند سوال باقی مانده است!",
+        French: "⚡ Vous êtes dans la dernière ligne droite ! Il ne reste que quelques questions !",
+      },
+      "100": {
+        Arabic: "🎉 عمل رائع! لقد أكملت الاستبيان بنجاح!",
+        default: "🎉 Great job! You've successfully completed the survey!",
+        Italian: "🎉 Ottimo lavoro! Hai completato con successo il sondaggio!",
+        Farsi: "🎉 کار عالی! شما نظرسنجی را با موفقیت تکمیل کردید!",
+        French: "🎉 Bravo ! Vous avez complété le sondage avec succès !",
+      },    
+    },
+  };
+  
+  export default translations;
+  
