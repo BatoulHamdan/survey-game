@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunksurvey_game=self.webpackChunksurvey_game||[]).push([[636],{636:(o,i,e)=>{e.r(i),e.d(i,{default:()=>s});const s=[{question:"Conosci l'Accordo di Parigi?",options:["S\xec","No","Ne ho sentito parlare"]},{question:"Pensi che stiamo vivendo il periodo peggiore nella storia riguardo la crisi climatica?",options:["S\xec","No","Non lo so"]},{question:"Credi che i livelli di inquinamento fossero pi\xf9 bassi in passato rispetto a oggi?",options:["S\xec","No","Non lo so"]}]}}]);
+//# sourceMappingURL=636.41340ace.chunk.js.map
