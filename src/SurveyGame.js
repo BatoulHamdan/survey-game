@@ -47,10 +47,10 @@ function SurveyGame() {
     loadQuestions();
   }, [language]);  
 
-  const playSound = (sound) => {
-    const audio = new Audio(sound);
+  const playSound = (fileName) => {
+    const audio = new Audio(process.env.PUBLIC_URL + fileName);
     audio.play();
-  };
+  };  
 
   const handleAnswerSelection = (option) => {
     setSelectedAnswer(option);
