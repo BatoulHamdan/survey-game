@@ -56,7 +56,7 @@ function SurveyGame() {
 
   const handleStart = async () => {
     try {
-      const res = await fetch("http://localhost:5000/api/users", {
+      const res = await fetch("https://climate-survey-backend.onrender.com/api/users", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -105,7 +105,7 @@ function SurveyGame() {
       });
   
       try {
-        const response = await fetch("http://localhost:5000/api/surveys", {
+        const response = await fetch("https://climate-survey-backend.onrender.com/api/surveys", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
