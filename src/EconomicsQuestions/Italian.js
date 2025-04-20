@@ -1,5 +1,6 @@
 const it = [
     {
+      id: 55,
       question: "Pensando all'economia, quale pensi sia l'obiettivo più importante che un governo dovrebbe perseguire?",
       options: [
         "Mantenere bassa e stabile l'inflazione",
@@ -9,6 +10,7 @@ const it = [
       ]
     },
     {
+      id: 56,
       question: "Qual è la tua opinione sull'introduzione di una tassa sul carbonio?",
       options: [
         "Fortemente favorevole",
@@ -19,6 +21,7 @@ const it = [
       ]
     },
     {
+      id: 57,
       question: "Pensi che crescita economica e protezione ambientale possano coesistere?",
       options: [
         "Sì, tramite innovazione e politiche verdi",

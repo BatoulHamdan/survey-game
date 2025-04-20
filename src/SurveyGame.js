@@ -17,8 +17,7 @@ function SurveyGame() {
   const [answers, setAnswers] = useState([]);
   const [selectedAnswer, setSelectedAnswer] = useState("");
   const [surveyCompleted, setSurveyCompleted] = useState(false);
-  const [hasStarted, setHasStarted] = useState(false); 
-  const [lastInterest, setLastInterest] = useState(null);
+  const [hasStarted, setHasStarted] = useState(false); // Add state to track if the survey has started
 
   // Dynamically import language-specific questions
   useEffect(() => {
@@ -26,13 +25,11 @@ function SurveyGame() {
       try {
         const personalModule = await import(`./PersonalQuestions/${language}.js`);
         const climateModule = await import(`./ClimateQuestions/${language}.js`);
-        const extraModule = await import(`./HistoryQuestions/${language}.js`);
-  
+        
         const personalQs = personalModule.default || [];
         const climateQs = climateModule.default || [];
-        const extraQs = extraModule.default || [];
   
-        const combined = [...personalQs, ...climateQs, ...extraQs];
+        const combined = [...personalQs, ...climateQs];
   
         setQuestionsList(combined);
         setStep(0);
@@ -47,82 +44,89 @@ function SurveyGame() {
     loadQuestions();
   }, [language]);  
 
-  const playSound = (fileName) => {
-    const audio = new Audio(process.env.PUBLIC_URL + fileName);
-    audio.play();
-  };  
+  // const playSound = (sound) => {
+  //   const audio = new Audio(sound);
+  //   audio.play();
+  // };
 
   const handleAnswerSelection = (option) => {
     setSelectedAnswer(option);
-    playSound("/sounds/answer-select.wav");
+    // playSound("/sounds/answer-select.wav");
   };
+
+  const handleStart = async () => {
+    try {
+      const res = await fetch("http://localhost:5000/api/users", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({}),
+      });
+  
+      const data = await res.json();
+      if (data._id) {
+        localStorage.setItem("userId", data._id);
+        console.log("User ID saved:", data._id); // ✅ Add this
+        setHasStarted(true); // only proceed if ID was saved
+      } else {
+        console.error("Invalid user data:", data);
+      }
+    } catch (err) {
+      console.error("Failed to register user:", err);
+    }
+  };    
 
   const handleBack = () => {
     if (step > 0) {
       setStep(step - 1);
       setSelectedAnswer(answers[step - 1] || "");
       setAnswers(answers.slice(0, -1));
-      playSound("/sounds/back.mp3");
+      // playSound("/sounds/back.mp3");
     }
   };
 
   const handleNext = async () => {
-    if (!selectedAnswer) return;
-  
     const updatedAnswers = [...answers];
-    const currentQuestion = questionsList[step];
-    let newQuestionsList = [...questionsList];
-  
-    // If this is the interest question
-    if (currentQuestion?.question === "Topic(s) of interest") {
-      // Remove previously added interest questions
-      if (lastInterest) {
-        try {
-          const prevModule = await import(`./${lastInterest}Questions/${language}.js`);
-          const prevQuestions = prevModule.default || [];
-          newQuestionsList = newQuestionsList.filter(
-            (q) => !prevQuestions.some((pq) => pq.question === q.question)
-          );
-        } catch (err) {
-          console.warn(`Failed to clean up previous interest ${lastInterest}`, err);
-        }
-      }
-  
-      // Add new interest questions (if not Politics or Culture)
-      if (selectedAnswer !== "Politics" && selectedAnswer !== "Culture") {
-        try {
-          const interestModule = await import(`./${selectedAnswer}Questions/${language}.js`);
-          const interestQuestions = interestModule.default || [];
-  
-          // Insert new questions after interest question
-          newQuestionsList.splice(step + 1, 0, ...interestQuestions);
-          setLastInterest(selectedAnswer); // Track new interest
-        } catch (err) {
-          console.warn(`No questions found for interest: ${selectedAnswer}`, err);
-          setLastInterest(null);
-        }
-      } else {
-        // Clear interest if Politics or Culture
-        setLastInterest(null);
-      }
-    }
-  
-    // Save the answer
     updatedAnswers[step] = selectedAnswer;
     setAnswers(updatedAnswers);
-    setQuestionsList(newQuestionsList);
-    setSelectedAnswer("");
   
-    if (step < newQuestionsList.length - 1) {
-      setStep(step + 1);
-      playSound("/sounds/next.wav");
-    } else {
+    if (step === questionsList.length - 1) {
       setSurveyCompleted(true);
-      playSound("/sounds/complete.wav");
-      console.log("Survey submitted:", updatedAnswers);
+      const userId = localStorage.getItem("userId");
+  
+      // Build 0–65 answers with fallback to N/A
+      const structuredAnswers = Array.from({ length: 66 }, (_, id) => {
+        const index = questionsList.findIndex(q => q.id === id);
+        return {
+          questionId: id.toString(),
+          answer: index !== -1 && updatedAnswers[index] ? updatedAnswers[index] : "N/A",
+        };
+      });
+  
+      try {
+        const response = await fetch("http://localhost:5000/api/surveys", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            userId,
+            answers: structuredAnswers,
+          }),
+        });
+  
+        const result = await response.json();
+        localStorage.setItem("userCode", result.userCode);
+      } catch (error) {
+        console.error("Error submitting survey:", error);
+      }
+    } else {
+      setStep(step + 1);
+      setSelectedAnswer(updatedAnswers[step + 1] || "");
     }
   };  
-  
+
   const handleLanguageChange = (e) => {
     const newLang = e.target.value;
     setLanguage(newLang);
@@ -153,11 +157,6 @@ function SurveyGame() {
 
   // Fetch milestone message based on current progress
   const milestone = getMilestoneMessage(progressPercent);
-
-  const handleStart = () => {
-    setHasStarted(true);
-    playSound("/sounds/start.wav");
-  };
 
   return (
     <div className="container mx-auto p-4 relative">

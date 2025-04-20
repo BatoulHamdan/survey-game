@@ -77,8 +77,8 @@ const translations = {
       French: "✅ Merci d'avoir complété le sondage !",
     },
     finishNote: {
-      Arabic: "نأمل أن تسهم في حماية كوكبنا 🌍",
-      default: "We hope you contribute to saving our planet 🌍",
+      Arabic: "نأمل أن تساهم في حماية كوكبنا 🌍",
+      default: "We hope yo0u contribute to saving our planet 🌍",
       Italian: "Speriamo che tu contribuisca a salvare il nostro pianeta 🌍",
       Farsi: "امیدواریم که به نجات سیاره‌مان کمک کنید 🌍",
       French: "Nous espérons que vous contribuerez à sauver notre planète 🌍",
@@ -140,6 +140,27 @@ const translations = {
         Farsi: "🎉 کار عالی! شما نظرسنجی را با موفقیت تکمیل کردید!",
         French: "🎉 Bravo ! Vous avez complété le sondage avec succès !",
       },    
+    },
+    uniqueIDNote: {
+      Arabic: "إليك معرفك المزيد للدخول في السحب على جائزتنا الخاصة:",
+      default: "Here's your unique ID to enter the lottery for our special gift:",
+      Italian: "Ecco il tuo ID univoco per partecipare alla lotteria per il nostro regalo speciale:",
+      Farsi: "این شناسه منحصر به فرد شما برای شرکت در قرعه‌کشی هدیه ویژه ماست:",
+      French: "Voici votre identifiant unique pour participer à notre tirage au sort spécial :",
+    },
+    followInstagramNote: {
+      Arabic: "تابعنا على إنستغرام لتعرف إذا كنت من الفائزين المحظوظين. سننشر رابطًا خاصًا في 3 يونيو.",
+      default: "Follow us on Instagram to check out whether you are one of the lucky winners. We will post a special link on June 3rd.",
+      Italian: "Seguici su Instagram per scoprire se sei uno dei fortunati vincitori. Pubblicheremo un link speciale il 3 giugno.",
+      Farsi: "ما را در اینستاگرام دنبال کنید تا ببینید آیا یکی از برندگان خوش‌شانس هستید یا نه. ما یک لینک ویژه در ۳ ژوئن منتشر خواهیم کرد.",
+      French: "Suivez-nous sur Instagram pour savoir si vous êtes l'un des heureux gagnants. Nous publierons un lien spécial le 3 juin.",
+    },
+    followUpNote: {
+      Arabic: "في هذه الأثناء، يمكنك متابعة نتائج الاستبيان ومعرفة المزيد عن البيئة.",
+      default: "In the meantime, you'll get to follow up on the survey results and learn more about the environment.",
+      Italian: "Nel frattempo, potrai seguire i risultati del sondaggio e saperne di più sull'ambiente.",
+      Farsi: "در این مدت می‌توانید نتایج نظرسنجی را پیگیری کرده و بیشتر درباره محیط زیست بیاموزید.",
+      French: "En attendant, vous pourrez suivre les résultats du sondage et en apprendre davantage sur l'environnement.",
     },
   };
   

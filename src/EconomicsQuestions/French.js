@@ -1,5 +1,6 @@
 const fr = [
     {
+      id: 55,
       question: "En pensant à l'économie, quel objectif est selon vous le plus important pour un gouvernement ?",
       options: [
         "Maintenir une inflation faible et stable",
@@ -9,6 +10,7 @@ const fr = [
       ]
     },
     {
+      id: 56,
       question: "Quelle est votre opinion sur l’instauration d’une taxe carbone ?",
       options: [
         "Fortement favorable",
@@ -19,6 +21,7 @@ const fr = [
       ]
     },
     {
+      id: 57,
       question: "Pensez-vous que la croissance économique et la protection de l’environnement peuvent aller de pair ?",
       options: [
         "Oui, grâce à l'innovation et aux politiques vertes",
